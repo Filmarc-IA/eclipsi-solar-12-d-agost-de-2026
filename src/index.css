@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;900&family=Rajdhani:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Segoe UI', system-ui, sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-rajdhani: 'Rajdhani', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#000] text-white overflow-x-hidden;
+  }
+}
