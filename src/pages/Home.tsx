@@ -12,7 +12,7 @@ export default function Home() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-center bg-cover transition-opacity duration-500"
-        style={{ backgroundImage: `url('/eclipse2026.jpg')` }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}eclipsi2026.jpg')` }}
       />
 
       {/* Stage */}
