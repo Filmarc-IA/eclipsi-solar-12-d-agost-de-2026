@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import eclipseImage from '../public/eclipsi2026.jpg';
 import { type ReactNode } from 'react';
 import { Award, Map, Backpack, Route, Glasses, Sparkles } from 'lucide-react';
 import { useLanguage } from '../i18n';
