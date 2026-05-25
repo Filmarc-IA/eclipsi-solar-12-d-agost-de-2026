@@ -42,7 +42,7 @@ export default function Ranking() {
       {/* BACKGROUND IMAGE - top part only, fading into solid color */}
       <div 
         className="absolute top-0 left-0 right-0 h-[80vh] bg-[50%_80%] bg-cover opacity-100 z-0 pointer-events-none transition-opacity duration-1000"
-        style={{ backgroundImage: `url('/eclipse2026.jpg')` }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}eclipsi2026.jpg')` }}
       />
       <div className="absolute top-0 left-0 right-0 h-[80vh] bg-gradient-to-b from-transparent from-30% via-[#0a0a0f]/80 to-[#0a0a0f] z-0 pointer-events-none" />
 
