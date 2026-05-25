@@ -16,7 +16,7 @@ import { LanguageSelector } from './components/LanguageSelector';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <LanguageSelector />
       <Routes>
         <Route path="/" element={<Home />} />
