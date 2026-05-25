@@ -17,7 +17,7 @@ export default function RoutesPage() {
       <div className="relative w-full min-h-[30vh] flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-center bg-cover"
           style={{ 
-            backgroundImage: `url('/eclipse2026.jpg')`,
+            backgroundImage: `url('${import.meta.env.BASE_URL}eclipsi2026.jpg')`,
             maskImage: 'linear-gradient(to bottom, white 60%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to bottom, white 60%, transparent 100%)'
           }}
