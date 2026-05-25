@@ -5,6 +5,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write        # ← esto es lo que faltaba
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node
