@@ -12,7 +12,7 @@ export default function MapPage() {
       </Link>
 
       <img 
-        src={`${import.meta.env.BASE_URL}eclipsi2026.jpg`}
+        src={`${import.meta.env.BASE_URL}mapa.jpg`} 
         alt={t('map.alt')} 
         className="w-full h-full object-contain"
       />

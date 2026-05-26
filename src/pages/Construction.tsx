@@ -9,7 +9,7 @@ export default function Construction() {
     <div className="relative w-screen h-screen overflow-hidden font-sans bg-[#0a0a0f] text-white flex flex-col items-center justify-center">
       <div 
         className="absolute inset-0 z-0 bg-center bg-cover opacity-30 mix-blend-screen"
-        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}eclipsi2026.jpg')` }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}eclipse2026.jpg')` }}
       />
       <div className="absolute inset-0 bg-gradient-radial from-transparent to-black/90 pointer-events-none" />
       
