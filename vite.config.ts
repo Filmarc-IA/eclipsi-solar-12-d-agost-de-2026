@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(({ command }) => {
   return {
-    base: '/eclipsi-solar-12-d-agost-de-2026/',
+    base: command === 'build' ? '/eclipsi-solar-12-d-agost-de-2026/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

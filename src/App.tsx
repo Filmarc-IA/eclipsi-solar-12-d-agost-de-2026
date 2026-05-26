@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Protection from './pages/Protection';
 import Construction from './pages/Construction';
@@ -16,7 +16,7 @@ import { LanguageSelector } from './components/LanguageSelector';
 
 export default function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <LanguageSelector />
       <Routes>
         <Route path="/" element={<Home />} />
