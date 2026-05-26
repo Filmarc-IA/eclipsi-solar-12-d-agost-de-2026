@@ -4,7 +4,7 @@ import { useLanguage, Lang } from '../i18n';
 export function LanguageSelector() {
   const { lang, setLang } = useLanguage();
   return (
-    <div className="absolute top-[clamp(16px,2vh,32px)] right-[clamp(16px,2.5vw,40px)] z-50 flex items-center gap-2 p-1.5 rounded-full backdrop-blur-md bg-black/40 border border-white/10 shadow-lg">
+    <div translate="no" className="absolute top-[clamp(44px,6vh,64px)] sm:top-[clamp(16px,2vh,32px)] right-[clamp(16px,2.5vw,40px)] z-50 flex items-center gap-2 p-1.5 rounded-full backdrop-blur-md bg-black/40 border border-white/10 shadow-lg">
       {(['ca', 'en', 'de'] as Lang[]).map((l) => (
         <button
           key={l}

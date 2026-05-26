@@ -16,7 +16,10 @@ export default function Home() {
       />
 
       {/* Stage */}
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+      <div 
+        className="relative z-10 w-full h-full flex flex-col items-center justify-center"
+        style={{ '--bg-scale': 'max(1vw, 1.79167vh)' } as React.CSSProperties}
+      >
         {/* Top Gradient */}
         <div className="absolute top-0 left-0 right-0 h-[clamp(80px,15vh,180px)] bg-gradient-to-b from-black/80 via-black/20 to-transparent pointer-events-none z-[3]" />
 
@@ -25,16 +28,27 @@ export default function Home() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="absolute top-[clamp(16px,3vh,48px)] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-20 px-[clamp(28px,3.5vw,56px)] py-[clamp(10px,1.5vh,20px)] rounded-[18px] backdrop-blur-md bg-black/25 border border-white/10 w-max max-w-[90vw] text-center"
+          className="absolute top-[max(90px,10vh)] sm:top-[clamp(16px,3vh,48px)] left-1/2 -translate-x-1/2 flex flex-col items-center z-20 rounded-[18px] backdrop-blur-md bg-black/25 border border-white/10 w-max max-w-[95vw] sm:max-w-[90vw] text-center"
+          style={{ 
+            gap: 'calc(0.2 * var(--bg-scale))',
+            padding: 'calc(1 * var(--bg-scale)) calc(2 * var(--bg-scale))'
+          }}
         >
           <motion.span 
             animate={{ textShadow: ["0 0 20px rgba(34,211,238,.5), 0 1px 6px rgba(0,0,0,.7)", "0 0 35px rgba(34,211,238,.9), 0 1px 6px rgba(0,0,0,.7)", "0 0 20px rgba(34,211,238,.5), 0 1px 6px rgba(0,0,0,.7)"] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="font-cinzel text-[clamp(16px,2.2vw,32px)] font-semibold text-cyan-400 tracking-[0.08em] uppercase"
+            className="font-cinzel font-semibold text-cyan-400 tracking-[0.08em] uppercase"
+            style={{ fontSize: 'calc(1.26 * var(--bg-scale))' }}
           >
             {t('home.date')}
           </motion.span>
-          <span className="font-rajdhani text-[clamp(11px,1.4vw,20px)] font-normal text-white/75 tracking-[0.15em] drop-shadow-md mt-1">
+          <span 
+            className="font-rajdhani font-normal text-white/75 tracking-[0.15em] drop-shadow-md"
+            style={{ 
+              fontSize: 'calc(0.77 * var(--bg-scale))',
+              marginTop: 'calc(0.35 * var(--bg-scale))'
+            }}
+          >
             {t('home.subtitle')}
           </span>
         </motion.div>
@@ -44,25 +58,28 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-20 w-[90vw] flex flex-col items-center gap-[clamp(14px,2vw,28px)]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-20 flex flex-col items-center"
+          style={{ gap: 'calc(1.5 * var(--bg-scale))' }}
         >
           <motion.h1 
             animate={{ textShadow: ["0 0 40px rgba(255,152,0,.6), 0 0 80px rgba(255,152,0,.3), 0 2px 20px rgba(0,0,0,.9)", "0 0 60px rgba(255,152,0,.8), 0 0 120px rgba(255,152,0,.4), 0 2px 20px rgba(0,0,0,.9)", "0 0 40px rgba(255,152,0,.6), 0 0 80px rgba(255,152,0,.3), 0 2px 20px rgba(0,0,0,.9)"] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="text-[clamp(33px,6.7vw,101px)] font-black tracking-[0.25em] leading-none text-white font-sans ml-[0.25em]"
+            className="font-black tracking-[0.25em] leading-none text-white font-sans ml-[0.25em]"
+            style={{ fontSize: 'calc(5.5 * var(--bg-scale))' }}
           >
             {t('home.eclipse')}
           </motion.h1>
-          <div className="relative inline-block py-[clamp(6px,1vh,12px)]">
-            <div className="absolute top-1/2 right-[calc(100%+clamp(12px,2vw,24px))] w-[clamp(40px,8vw,120px)] h-[2px] bg-gradient-to-r from-transparent to-amber-500/80 -translate-y-1/2" />
+          <div className="relative inline-block" style={{ padding: 'calc(0.5 * var(--bg-scale)) 0' }}>
+            <div className="absolute top-1/2 right-[calc(100%+calc(1.5*var(--bg-scale)))] w-[calc(6*var(--bg-scale))] h-[2px] bg-gradient-to-r from-transparent to-amber-500/80 -translate-y-1/2" />
             <motion.span 
               animate={{ textShadow: ["0 0 40px rgba(255,152,0,.7), 0 0 90px rgba(255,152,0,.4), 0 0 140px rgba(255,152,0,.15), 0 2px 20px rgba(0,0,0,.9)", "0 0 60px rgba(255,152,0,.9), 0 0 130px rgba(255,152,0,.6), 0 0 160px rgba(255,152,0,.2), 0 2px 20px rgba(0,0,0,.9)", "0 0 40px rgba(255,152,0,.7), 0 0 90px rgba(255,152,0,.4), 0 0 140px rgba(255,152,0,.15), 0 2px 20px rgba(0,0,0,.9)"] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="text-[clamp(30px,6.1vw,92px)] font-black text-white tracking-[0.12em] leading-none font-sans"
+              className="font-black text-white tracking-[0.12em] leading-none font-sans"
+              style={{ fontSize: 'calc(4.5 * var(--bg-scale))' }}
             >
               2026
             </motion.span>
-            <div className="absolute top-1/2 left-[calc(100%+clamp(12px,2vw,24px))] w-[clamp(40px,8vw,120px)] h-[2px] bg-gradient-to-l from-transparent to-amber-500/80 -translate-y-1/2" />
+            <div className="absolute top-1/2 left-[calc(100%+calc(1.5*var(--bg-scale)))] w-[calc(6*var(--bg-scale))] h-[2px] bg-gradient-to-l from-transparent to-amber-500/80 -translate-y-1/2" />
           </div>
         </motion.div>
 
@@ -74,7 +91,8 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="absolute bottom-[clamp(20px,3vh,40px)] flex gap-[clamp(14px,2.5vw,36px)] z-20 flex-wrap justify-center max-w-[94vw]"
+          className="absolute bottom-[clamp(20px,3vh,40px)] flex z-20 flex-wrap justify-center w-full max-w-[94vw]"
+          style={{ gap: 'calc(1.4 * var(--bg-scale))' }}
         >
           <NavItem to="/ranking" icon={<Award />} label={t('home.ranking')} color="amber" glowColor="rgba(255,193,7,1)" />
           <NavItem to="/mapa" icon={<Map />} label={t('home.map')} color="blue" glowColor="rgba(33,150,243,1)" />
@@ -101,23 +119,45 @@ function NavItem({ to, icon, label, color, glowColor }: { to: string, icon: Reac
    const colors = colorMap[color];
 
   return (
-    <Link to={to} className={`flex flex-col items-center justify-center gap-[clamp(4px,0.8vw,8px)] w-[clamp(72px,11vw,120px)] h-[clamp(92px,12.5vw,140px)] text-white transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-105 rounded-xl ${colors.hoverBg} group`}>
-      <div className={`flex items-center justify-center w-[clamp(62px,9vw,100px)] h-[clamp(62px,9vw,100px)] rounded-full bg-black border border-white/10 transition-all duration-400 ${colors.text}`} 
-           style={{ 
-             boxShadow: `0 0 35px 8px ${glowColor.replace('1)', '0.65)')}` 
-           }}
-           onMouseEnter={(e) => {
-             e.currentTarget.style.boxShadow = `0 0 45px 12px ${glowColor}, 0 0 85px 25px ${glowColor.replace('1)', '0.8)')}`;
-           }}
-           onMouseLeave={(e) => {
-             e.currentTarget.style.boxShadow = `0 0 35px 8px ${glowColor.replace('1)', '0.65)')}`;
-           }}
+    <Link 
+      to={to} 
+      className={`flex flex-col items-center justify-center text-white transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-105 rounded-xl ${colors.hoverBg} group`}
+      style={{
+        width: 'calc(5.25 * var(--bg-scale))',
+        height: 'calc(7 * var(--bg-scale))',
+        gap: 'calc(0.35 * var(--bg-scale))'
+      }}
+    >
+      <div 
+        className={`flex items-center justify-center rounded-full bg-black border border-white/10 transition-all duration-400 ${colors.text}`} 
+        style={{ 
+          width: 'calc(3.85 * var(--bg-scale))',
+          height: 'calc(3.85 * var(--bg-scale))',
+          boxShadow: `0 0 25px 5px ${glowColor.replace('1)', '0.65)')}` 
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = `0 0 35px 9px ${glowColor}, 0 0 65px 18px ${glowColor.replace('1)', '0.8)')}`;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = `0 0 25px 5px ${glowColor.replace('1)', '0.65)')}`;
+        }}
       >
-        <div className="w-[clamp(28px,3.5vw,34px)] h-[clamp(28px,3.5vw,34px)] [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-[2px]">
+        <div 
+          className="[&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-[2px]"
+          style={{
+            width: 'calc(1.75 * var(--bg-scale))',
+            height: 'calc(1.75 * var(--bg-scale))'
+          }}
+        >
           {icon}
         </div>
       </div>
-      <span className="text-[clamp(10px,1.15vw,14px)] font-medium tracking-[0.05em] uppercase drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
+      <span 
+        className="font-medium tracking-[0.05em] uppercase drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]"
+        style={{
+          fontSize: 'calc(0.63 * var(--bg-scale))'
+        }}
+      >
         {label}
       </span>
     </Link>
