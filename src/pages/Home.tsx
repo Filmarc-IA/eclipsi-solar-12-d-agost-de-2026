@@ -53,35 +53,34 @@ export default function Home() {
           </span>
         </motion.div>
 
-        {/* Center Title */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-20 flex flex-col items-center"
-          style={{ gap: 'calc(1.5 * var(--bg-scale))' }}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-20 flex flex-col items-center"
+        style={{ gap: 'calc(1.5 * var(--bg-scale))' }}
+      >
+        <motion.h1 
+          animate={{ textShadow: ["0 0 40px rgba(255,152,0,.6), 0 0 80px rgba(255,152,0,.3), 0 2px 20px rgba(0,0,0,.9)", "0 0 60px rgba(255,152,0,.8), 0 0 120px rgba(255,152,0,.4), 0 2px 20px rgba(0,0,0,.9)", "0 0 40px rgba(255,152,0,.6), 0 0 80px rgba(255,152,0,.3), 0 2px 20px rgba(0,0,0,.9)"] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="font-black tracking-[0.25em] leading-none text-white font-sans ml-[0.25em]"
+          style={{ fontSize: 'calc(4.95 * var(--bg-scale))' }}
         >
-          <motion.h1 
-            animate={{ textShadow: ["0 0 40px rgba(255,152,0,.6), 0 0 80px rgba(255,152,0,.3), 0 2px 20px rgba(0,0,0,.9)", "0 0 60px rgba(255,152,0,.8), 0 0 120px rgba(255,152,0,.4), 0 2px 20px rgba(0,0,0,.9)", "0 0 40px rgba(255,152,0,.6), 0 0 80px rgba(255,152,0,.3), 0 2px 20px rgba(0,0,0,.9)"] }}
+          {t('home.eclipse')}
+        </motion.h1>
+        <div className="relative inline-block" style={{ padding: 'calc(0.5 * var(--bg-scale)) 0' }}>
+          <div className="absolute top-1/2 right-[calc(100%+calc(1.5*var(--bg-scale)))] w-[calc(6*var(--bg-scale))] h-[2px] bg-gradient-to-r from-transparent to-amber-500/80 -translate-y-1/2" />
+          <motion.span 
+            animate={{ textShadow: ["0 0 40px rgba(255,152,0,.7), 0 0 90px rgba(255,152,0,.4), 0 0 140px rgba(255,152,0,.15), 0 2px 20px rgba(0,0,0,.9)", "0 0 60px rgba(255,152,0,.9), 0 0 130px rgba(255,152,0,.6), 0 0 160px rgba(255,152,0,.2), 0 2px 20px rgba(0,0,0,.9)", "0 0 40px rgba(255,152,0,.7), 0 0 90px rgba(255,152,0,.4), 0 0 140px rgba(255,152,0,.15), 0 2px 20px rgba(0,0,0,.9)"] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="font-black tracking-[0.25em] leading-none text-white font-sans ml-[0.25em]"
-            style={{ fontSize: 'calc(5.5 * var(--bg-scale))' }}
+            className="font-black text-white tracking-[0.12em] leading-none font-sans"
+            style={{ fontSize: 'calc(4.05 * var(--bg-scale))' }}
           >
-            {t('home.eclipse')}
-          </motion.h1>
-          <div className="relative inline-block" style={{ padding: 'calc(0.5 * var(--bg-scale)) 0' }}>
-            <div className="absolute top-1/2 right-[calc(100%+calc(1.5*var(--bg-scale)))] w-[calc(6*var(--bg-scale))] h-[2px] bg-gradient-to-r from-transparent to-amber-500/80 -translate-y-1/2" />
-            <motion.span 
-              animate={{ textShadow: ["0 0 40px rgba(255,152,0,.7), 0 0 90px rgba(255,152,0,.4), 0 0 140px rgba(255,152,0,.15), 0 2px 20px rgba(0,0,0,.9)", "0 0 60px rgba(255,152,0,.9), 0 0 130px rgba(255,152,0,.6), 0 0 160px rgba(255,152,0,.2), 0 2px 20px rgba(0,0,0,.9)", "0 0 40px rgba(255,152,0,.7), 0 0 90px rgba(255,152,0,.4), 0 0 140px rgba(255,152,0,.15), 0 2px 20px rgba(0,0,0,.9)"] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="font-black text-white tracking-[0.12em] leading-none font-sans"
-              style={{ fontSize: 'calc(4.5 * var(--bg-scale))' }}
-            >
-              2026
-            </motion.span>
-            <div className="absolute top-1/2 left-[calc(100%+calc(1.5*var(--bg-scale)))] w-[calc(6*var(--bg-scale))] h-[2px] bg-gradient-to-l from-transparent to-amber-500/80 -translate-y-1/2" />
-          </div>
-        </motion.div>
+            2026
+          </motion.span>
+          <div className="absolute top-1/2 left-[calc(100%+calc(1.5*var(--bg-scale)))] w-[calc(6*var(--bg-scale))] h-[2px] bg-gradient-to-l from-transparent to-amber-500/80 -translate-y-1/2" />
+        </div>
+      </motion.div>
 
         {/* Bottom Gradient */}
         <div className="absolute bottom-0 left-0 right-0 h-[clamp(80px,15vh,180px)] bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-[3]" />
@@ -123,16 +122,16 @@ function NavItem({ to, icon, label, color, glowColor }: { to: string, icon: Reac
       to={to} 
       className={`flex flex-col items-center justify-center text-white transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:scale-105 rounded-xl ${colors.hoverBg} group`}
       style={{
-        width: 'calc(5.25 * var(--bg-scale))',
-        height: 'calc(7 * var(--bg-scale))',
-        gap: 'calc(0.35 * var(--bg-scale))'
+        width: 'calc(6.04 * var(--bg-scale))',
+        height: 'calc(8.05 * var(--bg-scale))',
+        gap: 'calc(0.4 * var(--bg-scale))'
       }}
     >
       <div 
         className={`flex items-center justify-center rounded-full bg-black border border-white/10 transition-all duration-400 ${colors.text}`} 
         style={{ 
-          width: 'calc(3.85 * var(--bg-scale))',
-          height: 'calc(3.85 * var(--bg-scale))',
+          width: 'calc(4.43 * var(--bg-scale))',
+          height: 'calc(4.43 * var(--bg-scale))',
           boxShadow: `0 0 25px 5px ${glowColor.replace('1)', '0.65)')}` 
         }}
         onMouseEnter={(e) => {
@@ -145,8 +144,8 @@ function NavItem({ to, icon, label, color, glowColor }: { to: string, icon: Reac
         <div 
           className="[&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-[2px]"
           style={{
-            width: 'calc(1.75 * var(--bg-scale))',
-            height: 'calc(1.75 * var(--bg-scale))'
+            width: 'calc(2.01 * var(--bg-scale))',
+            height: 'calc(2.01 * var(--bg-scale))'
           }}
         >
           {icon}
@@ -155,7 +154,7 @@ function NavItem({ to, icon, label, color, glowColor }: { to: string, icon: Reac
       <span 
         className="font-medium tracking-[0.05em] uppercase drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]"
         style={{
-          fontSize: 'calc(0.63 * var(--bg-scale))'
+          fontSize: 'calc(0.725 * var(--bg-scale))'
         }}
       >
         {label}
